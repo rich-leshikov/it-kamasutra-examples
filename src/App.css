@@ -1,0 +1,36 @@
+.App {
+  width: 500px;
+  margin: 40px 100px;
+}
+
+.onoff__main {
+    text-align: left;
+    vertical-align: middle;
+}
+
+.onoff__button {
+    width: 70px;
+    height: 40px;
+    display: inline-block;
+    margin: 5px;
+    vertical-align: middle;
+    color: #eeebeb;
+}
+
+.onoff__alarm {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+    vertical-align: middle;
+    background-color: #eeebeb;
+}
+
+.red {
+    background-color: #e07b7b;
+}
+
+.green {
+    background-color: #8fe18f;
+}

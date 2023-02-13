@@ -1,7 +1,6 @@
 import React from 'react';
 import Star from './Star';
 
-
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 
 type RatingPropsType = {

@@ -8,7 +8,7 @@ export type AccordionPropsType = {
   /**
    * Elements, which show when accordion open
    */
-  items: Array<string>
+  items?: Array<string>
   /**
    * Callback to invoke on accordion clicking
    */

@@ -1,13 +1,13 @@
 import React from "react";
 
 export type AccordionBodyPropsType = {
-  items: Array<string>
+  items?: Array<string>
 }
 
 function AccordionBody(props: AccordionBodyPropsType) {
   return (
     <ul>
-      {props.items.map(i => <li>{i}</li>)}
+      {props.items && props.items.map(i => <li>{i}</li>)}
     </ul>
   )
 }

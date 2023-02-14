@@ -1,13 +1,15 @@
 import React from "react";
+import {ItemType} from '../../App';
 
 export type AccordionBodyPropsType = {
-  items?: Array<string>
+  items: ItemType[]
+  onClickItem: (itemId: string) => void
 }
 
 function AccordionBody(props: AccordionBodyPropsType) {
   return (
     <ul>
-      {props.items && props.items.map(i => <li>{i}</li>)}
+      {props.items && props.items.map(i => <li key={i.id} onClick={() => props.onClickItem(i.id)}>{i.value}</li>)}
     </ul>
   )
 }

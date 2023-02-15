@@ -9,7 +9,7 @@ export type AccordionBodyPropsType = {
 function AccordionBody(props: AccordionBodyPropsType) {
   return (
     <ul>
-      {props.items && props.items.map(i => <li key={i.id} onClick={() => props.onClickItem(i.id)}>{i.value}</li>)}
+      {props.items && props.items.map(i => <li key={i.id} onClick={() => props.onClickItem(i.id)}>{i.title}</li>)}
     </ul>
   )
 }

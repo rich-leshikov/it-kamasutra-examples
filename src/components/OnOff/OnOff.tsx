@@ -5,7 +5,7 @@ type OnOffPropsType = {
   changeColor: (onOffValue: boolean) => void
 }
 
-function OnOff(props: OnOffPropsType) {
+function OnOffMain(props: OnOffPropsType) {
   const onStyle = {
     width: '70px',
     height: '40px',
@@ -39,6 +39,8 @@ function OnOff(props: OnOffPropsType) {
     props.changeColor(onOffValue)
   }
 
+  console.log('in onoff')
+
   return (
     <div className={'onOffMain'}>
       <div className="title">Controlled OnOff</div>
@@ -49,4 +51,4 @@ function OnOff(props: OnOffPropsType) {
   )
 }
 
-export default OnOff
+export const OnOff = React.memo(OnOffMain)

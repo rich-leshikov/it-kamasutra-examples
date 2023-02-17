@@ -7,7 +7,7 @@ type AccordionPropsType = {
   collapsed?: boolean
 }
 
-function UncontrolledAccordion(props: AccordionPropsType) {
+function UncontrolledAccordionMemo(props: AccordionPropsType) {
   let [collapse, turnCollapse] = useState(props.collapsed)
 
   return (
@@ -18,22 +18,6 @@ function UncontrolledAccordion(props: AccordionPropsType) {
       {!collapse && <AccordionBody/>}
     </div>
   )
-
-
-  // if (!props.collapsed) {
-  //   return (
-  //     <div>
-  //       <AccordionTitle title={props.title}/>
-  //       <AccordionBody/>
-  //     </div>
-  //   )
-  // } else {
-  //   return (
-  //     <div>
-  //       <AccordionTitle title={props.title}/>
-  //     </div>
-  //   )
-  // }
 }
 
-export default UncontrolledAccordion
+export const UncontrolledAccordion = React.memo(UncontrolledAccordionMemo)

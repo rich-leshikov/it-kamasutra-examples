@@ -5,7 +5,7 @@ import AutorenewIcon from '@mui/icons-material/Autorenew';
 
 export type SelectPropsType = {
   /**
-   * Item value of conveyed array
+   * Item value from conveyed array
    */
   title: string
   /**
@@ -28,7 +28,8 @@ export type SelectPropsType = {
   onChange: (itemId: string, items: ItemType[]) => void
 }
 
-export function Select(props: SelectPropsType) {
+export const Select = React.memo((props: SelectPropsType) => {
+  console.log('in select')
   return (
     <div>
       <Button
@@ -38,7 +39,7 @@ export function Select(props: SelectPropsType) {
         onClick={props.onClick}
       >{props.title}</Button>
       {!props.collapse && props.items.map(i =>
-        <div>
+        <div key={i.id}>
           <Button
             variant="outlined"
             style={{margin: '2px', width: '150px'}}
@@ -47,4 +48,4 @@ export function Select(props: SelectPropsType) {
         </div>)}
     </div>
   )
-}
+})

@@ -37,8 +37,8 @@ const changeSelectedItem = action('Select title changed')
 
 const Template: Story<SelectPropsType> = (args) => <Select {...args}/>
 
-export const CollapsedSelectMode = Template.bind({})
-CollapsedSelectMode.args = {
+export const CollapsedMode = Template.bind({})
+CollapsedMode.args = {
   title: items[0].title,
   collapse: true,
   items: [],
@@ -46,8 +46,8 @@ CollapsedSelectMode.args = {
   onChange: changeSelectedItem
 }
 
-export const UncollapsedSelectMode = Template.bind({})
-UncollapsedSelectMode.args = {
+export const UncollapsedMode = Template.bind({})
+UncollapsedMode.args = {
   title: items[0].title,
   collapse: false,
   items: [
@@ -60,7 +60,7 @@ UncollapsedSelectMode.args = {
   onChange: changeSelectedItem
 }
 
-export const ChangingSelectMode: Story<SelectPropsType> = (args) => {
+export const ChangingMode: Story<SelectPropsType> = (args) => {
   const [title, setTitle] = useState<string>(args.items[0].title)
   const [selectCollapse, setSelectCollapse] = useState<boolean>(args.collapse)
 
@@ -91,7 +91,7 @@ export const ChangingSelectMode: Story<SelectPropsType> = (args) => {
     </div>
   )
 }
-ChangingSelectMode.args = {
+ChangingMode.args = {
   title: items[0].title, // I know that it is bad practice
   items: [
     {id: v1(), title: 'Dimych'},

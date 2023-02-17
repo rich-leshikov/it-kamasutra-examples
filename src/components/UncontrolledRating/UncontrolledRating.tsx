@@ -3,7 +3,7 @@ import Star from './Star';
 
 type RatingPropsType = {}
 
-function UncontrolledRating(props: RatingPropsType) {
+function UncontrolledRatingMain(props: RatingPropsType) {
   let [value, setValue] = useState(0)
 
   return (
@@ -17,4 +17,4 @@ function UncontrolledRating(props: RatingPropsType) {
   )
 }
 
-export default UncontrolledRating
+export const UncontrolledRating = React.memo(UncontrolledRatingMain)

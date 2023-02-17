@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Accordion, {AccordionPropsType} from './Accordion';
+import {Accordion, AccordionPropsType} from './Accordion';
 import {Story} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {v1} from 'uuid';

@@ -32,6 +32,7 @@ export const Select = React.memo((props: SelectPropsType) => {
   return (
     <div>
       <Button
+        color={'success'}
         variant="contained"
         style={{margin: '2px', width: '150px'}}
         endIcon={<AutorenewIcon/>}
@@ -40,6 +41,7 @@ export const Select = React.memo((props: SelectPropsType) => {
       {!props.collapse && props.items.map(i =>
         <div key={i.id}>
           <Button
+            color={'success'}
             variant="outlined"
             style={{margin: '2px', width: '150px'}}
             onClick={() => props.onChange(i.id, props.items)}

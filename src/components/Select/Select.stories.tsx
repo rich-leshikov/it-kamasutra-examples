@@ -1,7 +1,6 @@
-import React, {ChangeEvent, useRef, useState} from 'react';
+import React, {useState} from 'react';
 import {Story} from '@storybook/react';
-import {Select} from './Select';
-import {SelectPropsType} from './Select';
+import {Select, SelectPropsType} from './Select';
 import {ItemType} from '../../App';
 import {action} from '@storybook/addon-actions';
 import {v1} from 'uuid';

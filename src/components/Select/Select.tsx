@@ -29,7 +29,6 @@ export type SelectPropsType = {
 }
 
 export const Select = React.memo((props: SelectPropsType) => {
-  console.log('in select')
   return (
     <div>
       <Button

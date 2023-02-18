@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback, useMemo} from 'react';
 import './App.css';
 import {Rating, RatingValueType} from './components/Rating/Rating';
 import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion';
@@ -24,27 +24,27 @@ export function App() {
     alert(`You have clicked on item with id ${itemId}`)
   }
 
-  function changeColor(onOffValue: boolean) {
-    onChange(onOffValue)
-  }
+  const changeColor = useCallback((onOffValue: boolean) => onChange(onOffValue), [])
 
-  const items: Array<ItemType> = [
+  const getItems = useMemo((): ItemType[] => [
     {id: v1(), title: 'Dimych'},
     {id: v1(), title: 'Sergey'},
     {id: v1(), title: 'Ivan'},
     {id: v1(), title: 'Vadim'},
-  ]
+  ], [])
 
-  const [title, setTitle] = useState<string>(items[0].title)
+  const [title, setTitle] = useState<string>(getItems[0].title)
   const [selectCollapse, setSelectCollapse] = useState<boolean>(true)
 
-  function changeSelectedItem(itemId: string, items: ItemType[]) {
+  const changeSelectedItem = useCallback((itemId: string, items: ItemType[]) => {
     let itemSelected = items.find(i => i.id === itemId)
     if (itemSelected) {
       setTitle(itemSelected.title)
       setSelectCollapse(true)
     }
-  }
+  }, [])
+
+  const onSelectCollapseHandler = useCallback(() => setSelectCollapse(!selectCollapse), [selectCollapse])
 
   return (
     <div className="App">
@@ -55,14 +55,14 @@ export function App() {
         title={'-- Menu --'}
         collapsed={collapse}
         onClick={() => setCollapse(!collapse)}
-        items={items}
+        items={getItems}
         onClickItem={onClickItem}
       />
       <Accordion
         title={'-- Users --'}
         collapsed={collapse}
         onClick={() => setCollapse(!collapse)}
-        items={items}
+        items={getItems}
         onClickItem={onClickItem}
       />
       Article 2
@@ -83,8 +83,8 @@ export function App() {
       <Select
         title={title}
         collapse={selectCollapse}
-        items={items}
-        onClick={() => setSelectCollapse(!selectCollapse)}
+        items={getItems}
+        onClick={onSelectCollapseHandler}
         onChange={changeSelectedItem}
       />
     </div>

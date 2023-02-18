@@ -39,8 +39,6 @@ function OnOffMain(props: OnOffPropsType) {
     props.changeColor(onOffValue)
   }
 
-  console.log('in onoff')
-
   return (
     <div className={'onOffMain'}>
       <div className="title">Controlled OnOff</div>

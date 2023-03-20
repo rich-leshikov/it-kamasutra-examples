@@ -37,7 +37,7 @@ const defaultState = [
 ]
 
 export const FilterByMCharMode: Story<SelectWithMemoPropsType> = (args) => {
-  const getCities = useCallback((): CityType[] => defaultState, [])
+  const getCities = useMemo((): CityType[] => defaultState, [])
   const [cities, setCities] = useState<CityType[]>(getCities)
 
   const filteredCities = useMemo(() => {
@@ -64,7 +64,7 @@ FilterByMCharMode.args = {
 }
 
 export const FilterByStateMode: Story<SelectWithMemoPropsType> = (args) => {
-  const getCities = useCallback((): CityType[] => defaultState, [])
+  const getCities = useMemo((): CityType[] => defaultState, [])
   const [cities, setCities] = useState<CityType[]>(getCities)
 
   const filteredCities = useMemo(() => {
@@ -91,7 +91,7 @@ FilterByStateMode.args = {
 }
 
 export const FilterByPopulationCharMode: Story<SelectWithMemoPropsType> = (args) => {
-  const getCities = useCallback((): CityType[] => defaultState, [])
+  const getCities = useMemo((): CityType[] => defaultState, [])
   const [cities, setCities] = useState<CityType[]>(getCities)
 
   const filteredCities = useMemo(() => {

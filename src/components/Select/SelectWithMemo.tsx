@@ -1,4 +1,4 @@
-import React, {useCallback, useState, useMemo} from 'react';
+import React, {useMemo, useState} from 'react';
 import {CitiesFilterType, CityType} from '../../App';
 import {Button} from '@mui/material';
 import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
@@ -26,9 +26,9 @@ export const SelectWithMemo = React.memo((props: SelectWithMemoPropsType) => {
   const [isCollapsed, setCollapse] = useState<boolean>(false)
   const [isFiltered, setFilter] = useState<boolean>(false)
 
-  const onCollapseHandler = useCallback(() => setCollapse(!isCollapsed), [isCollapsed])
+  const onCollapseHandler = useMemo(() => () => setCollapse(!isCollapsed), [isCollapsed])
 
-  const changeSelectedItem = useCallback((itemId: string, items: CityType[]) => {
+  const changeSelectedItem = useMemo(() => (itemId: string, items: CityType[]) => {
     let itemSelected = items.find(i => i.id === itemId)
     if (itemSelected) {
       setTitle(itemSelected.title)

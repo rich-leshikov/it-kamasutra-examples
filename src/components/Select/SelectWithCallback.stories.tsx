@@ -41,7 +41,7 @@ export const FilterByMCharMode: Story<SelectWithCallbackPropsType> = (args) => {
   const [cities, setCities] = useState<CityType[]>(getCities)
 
   const filteredCities = useCallback(() => {
-    return cities.filter(i => i.title.toLowerCase().indexOf('m') !== -1)
+    return cities.filter(i => i.title.toLowerCase().indexOf('o') !== -1)
   }, [cities])
 
   const onFilterCities = (arrayCities: CityType[], filterType: CitiesFilterType) => {
@@ -68,7 +68,7 @@ export const FilterByStateMode: Story<SelectWithCallbackPropsType> = (args) => {
   const [cities, setCities] = useState<CityType[]>(getCities)
 
   const filteredCities = useCallback(() => {
-    return cities.filter(i => i.state === 'Belarus')
+    return cities.filter(i => i.state === 'Russia')
   }, [cities])
 
   const onFilterCities = (arrayCities: CityType[], filterType: CitiesFilterType) => {
@@ -95,7 +95,7 @@ export const FilterByPopulationCharMode: Story<SelectWithCallbackPropsType> = (a
   const [cities, setCities] = useState<CityType[]>(getCities)
 
   const filteredCities = useCallback(() => {
-    return cities.filter(i => i.population >= 10000000)
+    return cities.filter(i => i.population <= 1000000)
   }, [cities])
 
   const onFilterCities = (arrayCities: CityType[], filterType: CitiesFilterType) => {

@@ -3,7 +3,7 @@ import {Story} from '@storybook/react';
 import {v1} from 'uuid';
 import {CitiesFilterType, CityType} from '../../App';
 import {SelectWithCallback, SelectWithCallbackPropsType} from './SelectWithCallback';
-import {SelectWithUseState} from './SelectWithUseState';
+import {SelectWithUseState, SelectWithUseStatePropsType} from './SelectWithUseState';
 
 export default {
   title: 'Select with useState',
@@ -37,7 +37,7 @@ const defaultState = [
   {id: v1(), title: 'Moscow', state: 'Russia', population: 13010112},
 ]
 
-export const FilterByMCharMode: Story<SelectWithCallbackPropsType> = (args) => {
+export const FilterByMCharMode: Story<SelectWithUseStatePropsType> = (args) => {
   const getCities = useCallback((): CityType[] => defaultState, [])
   const [cities, setCities] = useState<CityType[]>(getCities)
 
@@ -58,13 +58,13 @@ export const FilterByMCharMode: Story<SelectWithCallbackPropsType> = (args) => {
     }
   }
 
-  return <SelectWithCallback {...args} items={cities} filterItems={onFilterCities}/>
+  return <SelectWithUseState {...args} items={cities} filterItems={onFilterCities}/>
 }
 FilterByMCharMode.args = {
   filter: 'title'
 }
 
-export const FilterByStateMode: Story<SelectWithCallbackPropsType> = (args) => {
+export const FilterByStateMode: Story<SelectWithUseStatePropsType> = (args) => {
   const getCities = useCallback((): CityType[] => defaultState, [])
   const [cities, setCities] = useState<CityType[]>(getCities)
 
@@ -85,13 +85,13 @@ export const FilterByStateMode: Story<SelectWithCallbackPropsType> = (args) => {
     }
   }
 
-  return <SelectWithCallback {...args} items={cities} filterItems={onFilterCities}/>
+  return <SelectWithUseState {...args} items={cities} filterItems={onFilterCities}/>
 }
 FilterByStateMode.args = {
   filter: 'state'
 }
 
-export const FilterByPopulationCharMode: Story<SelectWithCallbackPropsType> = (args) => {
+export const FilterByPopulationCharMode: Story<SelectWithUseStatePropsType> = (args) => {
   const getCities = useCallback((): CityType[] => defaultState, [])
   const [cities, setCities] = useState<CityType[]>(getCities)
 
@@ -112,7 +112,7 @@ export const FilterByPopulationCharMode: Story<SelectWithCallbackPropsType> = (a
     }
   }
 
-  return <SelectWithCallback {...args} items={cities} filterItems={onFilterCities}/>
+  return <SelectWithUseState {...args} items={cities} filterItems={onFilterCities}/>
 }
 FilterByPopulationCharMode.args = {
   filter: 'population'

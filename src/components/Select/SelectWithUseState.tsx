@@ -4,7 +4,7 @@ import {Button} from '@mui/material';
 import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 
-export type SelectWithCallbackPropsType = {
+export type SelectWithUseStatePropsType = {
   /**
    * Array of items (id, title)
    */
@@ -21,7 +21,7 @@ export type SelectWithCallbackPropsType = {
   filterItems: (arrayCities: CityType[], filterType: CitiesFilterType) => void
 }
 
-export const SelectWithUseState = React.memo((props: SelectWithCallbackPropsType) => {
+export const SelectWithUseState = React.memo((props: SelectWithUseStatePropsType) => {
   const [title, setTitle] = useState<string>(props.items[0].title)
   const [isCollapsed, setCollapse] = useState<boolean>(false)
   const [isFiltered, setFilter] = useState<boolean>(false)

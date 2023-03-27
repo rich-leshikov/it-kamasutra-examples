@@ -18,7 +18,7 @@ export default {
   }
 }
 
-const defaultState = citiesState
+const defaultState: CityType[] = citiesState
 
 export const FilterByMCharMode: Story<SelectWithUseStatePropsType> = (args) => {
   const getCities = useCallback((): CityType[] => defaultState, [])

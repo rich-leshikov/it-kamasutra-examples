@@ -1,6 +1,13 @@
 import {v1} from 'uuid';
 
-export const citiesState = [
+export type CityType = {
+  id: string
+  title: string
+  state: string
+  population: number
+}
+
+export const citiesState: CityType[] = [
   {id: v1(), title: 'Grodno', state: 'Belarus', population: 357493},
   {id: v1(), title: 'Tokio', state: 'Japan', population: 38505000},
   {id: v1(), title: 'Magadan', state: 'Russia', population: 90757},

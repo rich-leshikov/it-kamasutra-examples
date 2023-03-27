@@ -17,14 +17,14 @@ export default {
   }
 }
 
-const defaultState = citiesState
+const defaultState: CityType[] = citiesState
 
 export const FilterByMCharMode: Story<SelectWithUseEffectPropsType> = (args) => {
   const getCities = useCallback((): CityType[] => defaultState, [])
   const [cities, setCities] = useState<CityType[]>(getCities)
 
   useEffect(() => {
-    alert(`Sorting by 'u' character`)
+    alert(`Filtering by 'u' character`)
   }, [])
 
   const filteredCities = useCallback(() => {
@@ -55,7 +55,7 @@ export const FilterByStateMode: Story<SelectWithUseEffectPropsType> = (args) => 
   const [cities, setCities] = useState<CityType[]>(getCities)
 
   useEffect(() => {
-    alert(`Sorting by japanese cities`)
+    alert(`Filtering by japanese cities`)
   }, [])
 
   const filteredCities = useCallback(() => {
@@ -86,7 +86,7 @@ export const FilterByPopulationCharMode: Story<SelectWithUseEffectPropsType> = (
   const [cities, setCities] = useState<CityType[]>(getCities)
 
   useEffect(() => {
-    alert(`Sorting by population`)
+    alert(`Filtering by population`)
   }, [])
 
   const filteredCities = useCallback(() => {

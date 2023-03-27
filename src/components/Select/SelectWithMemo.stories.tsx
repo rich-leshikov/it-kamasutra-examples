@@ -17,7 +17,7 @@ export default {
   }
 }
 
-const defaultState = citiesState
+const defaultState: CityType[] = citiesState
 
 export const FilterByMCharMode: Story<SelectWithMemoPropsType> = (args) => {
   const getCities = useMemo((): CityType[] => defaultState, [])

@@ -1,5 +1,4 @@
 import {Clock} from './Clock'
-import {Story} from '@storybook/react'
 
 
 export default {
@@ -7,7 +6,7 @@ export default {
   component: Clock,
 }
 
-const Template: Story = () => <Clock/>
 
-export const DefaultMode = Template.bind({})
+export const BaseAnalogExample = () => <Clock mode={'analog'}/>
+export const BaseDigitalExample = () => <Clock mode={'digital'}/>
 

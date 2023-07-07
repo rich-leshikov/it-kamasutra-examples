@@ -1,4 +1,4 @@
-import {Clock, ClockPropsType} from './Clock';
+import {Clock} from './Clock';
 import {Story} from '@storybook/react';
 
 export default {
@@ -6,7 +6,7 @@ export default {
   component: Clock,
 }
 
-const Template: Story<ClockPropsType> = (args) => <Clock {...args}/>
+const Template: Story = (args) => <Clock {...args}/>
 
 export const DefaultMode = Template.bind({})
 DefaultMode.args = {

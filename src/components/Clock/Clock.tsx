@@ -1,22 +1,18 @@
 import React, {useEffect, useRef, useState} from 'react'
 
-export type ClockPropsType = {
-  /**
-   * Default time value
-   */
-  time: string
-}
 
-export const Clock = React.memo((props: ClockPropsType) => {
-  const [time, setTime] = useState<string>(props.time)
+export const Clock = React.memo(() => {
+  const [time, setTime] = useState<string>('00:00:00')
   const [isTicking, setTicking] = useState<boolean>(false)
   const [date, setDate] = useState<Date>(new Date())
+
+  const digitalClockStyle = {fontSize: '24px', color: '#646464', fontFamily: 'impact'}
 
   const timerRef = useRef<ReturnType<typeof setInterval>>()
 
   useEffect(() => {
     if (isTicking) {
-       timerRef.current = setInterval(() => {
+      timerRef.current = setInterval(() => {
         setDate(new Date())
       }, 1000)
 
@@ -34,18 +30,7 @@ export const Clock = React.memo((props: ClockPropsType) => {
 
   }, [isTicking, date])
 
-  const onStartTicking = () => {
-    setTicking(true)
-  }
+  const onClickCondition = () => !isTicking ? setTicking(true) : setTicking(false)
 
-  const onStopTicking = () => {
-    setTicking(false)
-  }
-
-  return (
-    <div
-      style={{fontSize: '24px', color: '#646464', fontFamily: 'impact'}}
-      onClick={!isTicking ? onStartTicking : onStopTicking}
-    >{time}</div>
-  )
+  return <div style={digitalClockStyle} onClick={onClickCondition}>{time}</div>
 })
